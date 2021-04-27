@@ -36,6 +36,6 @@ public class Student {
 	}
 	@Override
 	public String toString() {
-		return "[id:"+id+",name"+name+",data:"+date+",idCard="+idCard+"]";
+		return "[id:"+id+",name"+name+",data:"+date+"]";
 	}
 }

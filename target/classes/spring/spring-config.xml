@@ -6,7 +6,9 @@
         http://www.springframework.org/schema/beans/spring-beans-4.3.xsd
         http://www.springframework.org/schema/context https://www.springframework.org/schema/context/spring-context-4.3.xsd">
 	
+	<!-- 
 	<context:annotation-config></context:annotation-config>
+	-->
 	
 	<bean id="idCard" class="cn.hzy.demo.model.IdCard">
 		<property name="id" value="1"></property>
@@ -20,6 +22,13 @@
 			<bean class="java.util.Date" ></bean>
 		</property>
 		<property name="idCard" ref="idCard"></property>
+	</bean>
+	<bean class="cn.hzy.demo.model.MyResource">
+		<property name="resource" >
+			<array>
+				<value>classpath*:test.properties</value>
+			</array>
+		</property>
 	</bean>
 
 </beans>
