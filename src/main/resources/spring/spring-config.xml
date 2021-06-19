@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:context="http://www.springframework.org/schema/context"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans-4.3.xsd
+        http://www.springframework.org/schema/context https://www.springframework.org/schema/context/spring-context-4.3.xsd">
+	
+	<!-- 
+	<context:annotation-config></context:annotation-config>
+	-->
+	<!--<import resource="classpath:/spring/spring-jdbc.xml" />-->
+
+	<bean id="idCard" class="cn.hzy.demo.model.IdCard">
+		<property name="id" value="1"></property>
+		<property name="student" ref="student"></property>
+	</bean>
+	
+	<bean id="student" class="cn.hzy.demo.model.Student">
+		<property name="id" value="1"></property>
+		<property name="name" value="张三"></property>
+		<property name="date">
+			<bean class="java.util.Date" ></bean>
+		</property>
+		<property name="idCard" ref="idCard"></property>
+	</bean>
+	<bean class="cn.hzy.demo.model.MyResource">
+		<property name="resource" >
+			<array>
+				<value>classpath*:test.properties</value>
+			</array>
+		</property>
+	</bean>
+
+
+</beans>
